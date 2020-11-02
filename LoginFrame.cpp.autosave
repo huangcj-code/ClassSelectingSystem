@@ -1,0 +1,4 @@
+#include "LoginFrame.h"
+Ui_LoginFram::Ui_LoginFram(QWidget *parent){
+    
+}
