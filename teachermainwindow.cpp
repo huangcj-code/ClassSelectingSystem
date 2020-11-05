@@ -29,4 +29,27 @@ teacherMainwindow::teacherMainwindow(QString ClassName,QString ClassID)
     }
     lineEdit->setText(ClassName);
     lineEdit->setEnabled(false);
+    connect(CommitButton,SIGNAL(clicked()),this,SLOT(saveScore()));
+    db.close();
+}
+
+void teacherMainwindow::saveScore(){
+    db.setHostName(HOSTNAME);
+    db.setPort(PORT);
+    db.setDatabaseName(DATABASE);
+    db.setUserName(USER);
+    db.setPassword(PASSWORD);
+    if(db.open()){
+        qDebug()<<"Success";
+    }
+    else{
+        qDebug()<<"Failed";
+        qDebug()<<db.lastError();
+    }
+    QSqlQuery query;
+    int curRow=tableWidget->rowCount();
+    for(int i=0;i<curRow;i++){
+        query.exec("UPDATE score SET Score="+tableWidget->item(i,2)->text()+" WHERE StudentID=\'"+tableWidget->item(i,0)->text()+"\'");
+    }
+    db.close();
 }

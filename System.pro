@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Login.cpp \
+    admin.cpp \
     changepwd.cpp \
     choosedialog.cpp \
     global.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     teachermainwindow.cpp
 
 HEADERS += \
+    Admin_UI.h \
     ChangePasswordDialogUi.h \
     ChooseDialog_UI.h \
     Login.h \
@@ -33,6 +35,7 @@ HEADERS += \
     LoginFrame.h \
     MainTeacher_UI.h \
     SelectWidgetUi.h \
+    admin.h \
     changepwd.h \
     choosedialog.h \
     global.h \

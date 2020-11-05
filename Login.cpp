@@ -41,6 +41,13 @@ bool Login::checkUserAndPassword(){
         indentity="teacher";
         quary.exec("SELECT SystemPassword FROM "+indentity+" WHERE TeacherID="+username);
         break;
+    case 2:
+        indentity="teachingSecretary";
+        quary.exec("SELECT SystemPassword FROM "+indentity+" WHERE SecretaryID="+username);
+        break;
+    case 3:
+        indentity="systemadmin";
+        quary.exec("SELECT SystemPassword FROM "+indentity+" WHERE AdminID="+username);
     }
     /*开始查表，固定ID核对密码确定是否登录成功*/
     if(quary.next()){
@@ -60,6 +67,13 @@ bool Login::checkUserAndPassword(){
                 ChooseDialog *choosedialog=new ChooseDialog(0,username);
                 choosedialog->show();
                 choosedialog->exec();
+            }
+            else if (indentity=="teachingSecretary"){
+
+            }
+            else if(indentity=="systemadmin"){
+                adw=new Admin();
+                adw->show();
             }
             this->setVisible(false);
             return 1;
