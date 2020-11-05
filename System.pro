@@ -18,21 +18,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Login.cpp \
     changepwd.cpp \
+    choosedialog.cpp \
     global.cpp \
     main.cpp \
     mainwindow.cpp \
-    selectwidget.cpp
+    selectwidget.cpp \
+    teachermainwindow.cpp
 
 HEADERS += \
     ChangePasswordDialogUi.h \
+    ChooseDialog_UI.h \
     Login.h \
     LoginFrame.h \
     LoginFrame.h \
+    MainTeacher_UI.h \
     SelectWidgetUi.h \
     changepwd.h \
+    choosedialog.h \
     global.h \
     mainwindow.h \
-    selectwidget.h
+    selectwidget.h \
+    teachermainwindow.h
 
 FORMS += \
     mainwindow.ui
